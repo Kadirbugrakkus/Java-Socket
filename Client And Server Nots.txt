@@ -1,0 +1,16 @@
+----------------------- CLİENT---------------------
+socket = new Socket (“localhost”,7755) olarak yazmamın sebebi projemi localde çalıştırıyor olmamdır.
+Yine localhost yerine 170.0.0.1 de yazabilirdik. 
+Ama siz bu kısıma bağlanmak istediğiniz bilgisayarın (yani serverın) IP adresini yazabilirsiniz.
+
+out.println(deger); koduyla Server ‘a datamızı gönderiyoruz.
+
+------------------------SERVER---------------------
+
+Server 7755 portunu client’ ın bağlanması için dinliyor. 
+Port açarken dikkat etmemiz gereken önemli bir konuda portun 1 ile 1024 arasında  olmamasıdır. 
+Çünkü bu değer aralıklarındaki portlar spesifik portlardır ve root tarafından kullanılır. 
+Eğer 1-1024 arasında bir portu kullanmaya çalışırsak programımız “bind permission” hatası verecektir.
+
+clientGelen=in.readLine(); komutu istemciden gelen datayı okur ve clientGelen değişkenine aktarır. 
+out.println(sayi*sayi) komutu ile istemciden gelen sayının karesini alıp tekrar istemciye iletiyoruz.
